@@ -1,13 +1,13 @@
 $(document).ready(function(){
     $(".save-btn").click(function(){
-        let value = $(this).siblings(".hour-text").text();
-        let time = $(this).parent().attr("id");
+        var value = $(this).siblings(".hour-text").val();
+        var time = $(this).parent().attr("id");
 
         console.log(value, time)
 
         localStorage.setItem(time, value);
     })
-});
+
 
 function hourtracker(){
     let currentH = moment().hours();
@@ -44,3 +44,5 @@ $("#h-9 .hour-text").val(localStorage.getItem("h-9"));
 
   // display current day on page
   $("#currentDay").text(moment().format("dddd, MMMM Do"));
+
+});
